@@ -1,0 +1,206 @@
+
+    <ion-content class="ion-padding">
+      <div class="container">
+
+        <form [formGroup]="loginForm">
+        <!-- 제목(로그인) -->
+        <ion-row class="introTitle">
+          <label class="introTitle">{{auth.message.get('login')}}</label>
+        </ion-row>
+
+        <!-- 제목(아이디) -->
+        <ion-row class="defaultTitle">
+          <label class="defaultTitle">{{auth.message.get('email')}}</label>
+        </ion-row>
+
+        <!-- 아이디 입력란 -->
+        <ion-row class="defaultInput">
+          <ion-col size="9" class="ion-no-padding">
+            <ion-input class="defaultInput" type="text" formControlName='email' [(ngModel)]='registerCredentials.email'
+              placeholder="{{auth.message.get('email')}}" class="ion-no-padding" required></ion-input>
+          </ion-col>
+        </ion-row>
+
+        <!-- 제목(비밀번호) -->
+        <ion-row class="defaultTitle">
+          <label class="defaultTitle">{{auth.message.get('password')}}</label>
+        </ion-row>
+
+        <!-- 비밀번호 입력란 -->
+        <ion-row class="defaultInput">
+          <ion-col size="9" class="ion-no-padding">
+            <ion-input class="defaultInput" required="" type="password" formControlName='password' [(ngModel)]='registerCredentials.password' type='password'
+              placeholder="{{auth.message.get('password')}}" class="ion-no-padding" required></ion-input>
+          </ion-col>
+        </ion-row>
+
+        </form>
+
+        <!-- 자동로그인 -->
+        <ion-row class="autoLogin">
+          <button class="login" (click)="login()">{{auth.message.get('login')}}</button>
+        </ion-row>
+
+        
+
+        <!-- 회원가입  -->
+        <ion-row>
+          <button class="signup" (click)='signup()'>{{auth.message.get('signup')}}</button>
+        </ion-row>
+      </div>
+    </ion-content>
+
+
+<!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+
+
+
+<style>
+
+
+  div.container {
+    flex-direction: column;
+    padding: 0rem 1.5rem;
+  }
+
+  /* 제목 (로그인) */
+  label.introTitle {
+    font-size: 2.8rem;
+    margin-top: 6rem;
+    margin-bottom: 1rem;
+    margin-left: 0.3rem;
+  }
+
+  /* 아이디,비밀번호 제목*/
+  label.defaultTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  ion-row.defaultTitle {
+    margin-top: 4rem;
+  }
+
+  /* 아이디,비밀번호 입력 input */
+  ion-input.defaultInput {
+    text-align: left;
+    font-size: 1.5rem;
+    border: solid 0.1rem white;
+    border-bottom-color: var(--bory-border);
+    --placeholder-color: var(--bory-placeholder);
+    --padding-top: 0.3rem;
+    --padding-bottom: 0.3rem;
+    width: 22rem;
+    background: inherit;
+  }
+
+
+  ion-row.autoLogin {
+    margin-top: 2em;
+  }
+
+  ion-label.autoLogin {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    color: var(--bory-grey);
+    margin-left: 0.5rem;
+  }
+
+
+  /* 로그인 버튼 */
+  button.login {
+    width: 100%;
+    height: 3.6rem;
+    font-size: 1.2rem;
+    text-align: center;
+    display: block;
+    background-color: var(--ion-color-primary);
+    color: white;
+    border-radius: 1.8rem;
+    margin-left: auto;
+    margin-top: 1rem;
+  }
+
+
+  /* 아이디찾기 / 비밀번호찾기 버튼 */
+  ion-row.search {
+    margin-top: 1rem;
+  }
+
+  button.search {
+    color: var(--bory-placeholder);
+    font-size: 1.1rem;
+    background-color: white;
+  }
+
+
+  /*  회원가입 버튼 */
+  button.signup {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-align: center;
+    color: var(--ion-color-primary);
+    background: white;
+    border: 0.2rem solid var(--ion-color-primary);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  ion-row.snsLogin {
+    width: 100%;
+  }
+
+  ion-col.snsLogin {
+    display: flex;
+    align-items: center;
+  }
+
+  button.facebookLogin {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    background: var(--bory-facebook) !important;
+    display: flex;
+    align-items: center;
+    padding-right: 4rem;
+  }
+
+  button.googleLogin {
+    width: 100%;
+    height: 5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    color: white;
+    background: var(--bory-google) !important;
+    display: flex;
+    align-items: center;
+    padding-right: 4rem;
+    margin-top: 0.5rem;
+  }
+
+  label.snsLogin {
+    width: 100%;
+    text-align: center;
+    padding-right: 1.2rem;
+  }
+
+  ion-img.facebookLogo {
+    width: 4rem;
+    height: 4rem;
+    text-align: left;
+    float: left;
+  }
+
+  ion-img.googleLogo {
+    width: 4rem;
+    height: 4rem;
+    text-align: left;
+    float: left;
+  }
+</style>

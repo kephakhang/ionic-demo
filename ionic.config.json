@@ -1,0 +1,8 @@
+{
+  "name": "sdua",
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
+  "type": "angular"
+}

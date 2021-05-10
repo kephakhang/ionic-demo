@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">contactLess</string>
+    <string name="title_activity_main">contactLess</string>
+    <string name="package_name">io.bory.contactless</string>
+    <string name="custom_url_scheme">io.bory.contactless</string>
+</resources>

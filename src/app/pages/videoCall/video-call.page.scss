@@ -1,0 +1,71 @@
+ion-grid {
+    min-height: 100%;
+}
+
+
+ion-row.remote-stream {
+    width: 100%;
+    height: 100%;
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+ion-row.local-stream {
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    video {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+ion-row.call-button {
+    position: absolute;
+    bottom: 0;
+    z-index: 9999;
+    width: 100%;
+    
+    div {
+        width: 100%;
+        .call {
+            width: 100%;
+            height: 512px;
+            ion-icon {
+                font-size: 256px;
+            }   
+        }
+    }
+
+    ion-col {
+        width: 50%;
+        .call-end {
+            width: 100%;
+            height: 64px;
+            ion-icon {
+                font-size: 64px;
+            }
+        } 
+
+        .record-start {
+            width: 100%;
+            height: 64px;
+            ion-icon {
+                font-size: 64px;
+            }
+        } 
+
+        .record-end {
+            width: 100%;
+            height: 64px;
+            ion-icon {
+                font-size: 64px;
+            }
+        } 
+    }
+}

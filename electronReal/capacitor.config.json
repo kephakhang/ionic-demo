@@ -1,0 +1,7 @@
+{
+  "appId": "com.youngplussoft.ionicdemo",
+  "appName": "ionicdemo",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

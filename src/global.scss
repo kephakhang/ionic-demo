@@ -1,0 +1,354 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+html {
+  font-size: 16px;
+}
+
+@media(max-width: 500px) {
+  html {
+    font-size: 12px;
+  }
+}
+
+  // 커스텀 폰트 적용
+  label, button, ion-label, ion-button, input, ion-input, select, ion-select, option, ion-option{
+    font-family: 'My Custom Font';
+  }
+
+
+ /* 헤더 설정 */
+ ion-row.header {
+    height: 7em;
+    background: white;
+    border-bottom: solid 0.1em #d8d8d8;
+  }
+
+  ion-row.main{
+    background: var(--bory-header);
+  }
+
+  ion-col.header{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ion-col.sideMenu{
+    width: 5em;
+    margin-left: 2em;
+  }
+
+  /* 제목 */
+  label.headerTitle {
+    font-size: 1.6em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--bory-black);
+  }
+
+  label.main {
+    font-size: 1.6em;
+    font-weight: normal;
+    text-align: center;
+    color: white;
+  }
+
+  // 사이드 메뉴 설정
+  ion-col.sideMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ion-menu-button.sideMenu {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  ion-img.sideMenu{
+    width: 1.8em;
+    height: 1.8em;
+  }
+
+  //   닫기 버튼
+  button.close {
+    width: 2em;
+    height: 2em;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 2em;
+    padding: 0em;
+  } 
+
+  img.close{
+    width: 1.7rem;
+    height: auto;
+    font-size: 1rem;  
+  }
+
+  //   뒤로가기 버튼
+  button.back {
+    width: 2em;
+    height: 2em;
+    background: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2em;
+    padding: 0em;
+  }
+
+  img.back{
+    width: 0.9rem;
+    height: auto;
+  }
+  
+
+  /* 컨텐츠 설정 */
+  /* 기본 틀 잡기 */
+  /* 수직 가운데 정렬 */
+  div.container {
+    display: flex;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background: white;
+  }
+
+  div.outer {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+
+  div.inner {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+  }
+
+
+  // 푸터 설정
+  ion-row.footer {
+    height: 6em;
+  }
+
+  ion-col.footer {
+    height: 100%;
+    padding: 0rem;
+  }
+
+  button.footer {
+    height: 100%;
+    width: 100%;
+    font-size: 1.4em;
+    background: var(--bory-blue);
+    color: white;
+  }
+
+
+  input::placeholder{
+    color: var(--bory-placeholder);
+  }
+
+  .ion-padding, [padding] {
+     --padding-start: var(--ion-padding, 0px) !important; 
+     --padding-end: var(--ion-padding, 0px) !important; 
+     --padding-top: var(--ion-padding, 0px) !important; 
+     --padding-bottom: var(--ion-padding, 0px) !important; 
+     padding-left: var(--ion-padding, 0px) !important; 
+     padding-right: var(--ion-padding, 0px) !important; 
+     padding-top: var(--ion-padding, 0px) !important; 
+     padding-bottom: var(--ion-padding, 0px) !important; 
+  }
+
+  .sc-ion-card-md-h {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+    -webkit-margin-start: 0px !important;
+    margin-inline-start: 0px !important;
+    -webkit-margin-end: 0px !important;
+    margin-inline-end: 0px !important;
+  }
+
+
+
+
+
+
+
+
+
+
+// // 메인 팝업 (alert)
+// ion-alert.mainAlert{ //메인 alert
+//     --width: 700rem;
+//     --height: auto;
+//     --background: white;
+//     .alert-head{ //헤드
+//         padding: 0rem;
+//     }
+//     .alert-message{ //메세지
+//         padding: 0rem;
+//         width: auto;
+//         height: auto;
+//         max-height: 100%;
+//     }
+//     .alert-button{ //버튼
+//         border-right: solid 1rem grey;
+//         width: 50%;
+//         height: 40rem;
+//         margin: 0rem;
+//         text-align: center;
+//         padding: 0rem;
+//     }
+//     .alert-button-group{ // 버튼 외부
+//         padding: 0rem;
+//     }
+//     .alert-button-inner{ // 버튼 내부
+//         justify-content: center;
+//     }
+// }
+
+
+
+
+
+
+
+  // 카테고리 어드민 alret 설정
+  .categoryAdminAlert {
+  
+  // 헤드 설정
+    .alert-head.sc-ion-alert-md {
+      display: flex;
+      justify-content: center;
+    }
+    .alert-title.sc-ion-alert-md {
+      font-weight: bold;
+    }
+    
+    // 메세지 설정
+    .alert-message.sc-ion-alert-md{
+      padding-left: 4.5rem;
+      padding-right: 4.5rem;
+      text-align: center;
+      padding-bottom: 0rem;
+      color: var(--bory-grey);
+      font-size: 1.4rem;
+    }
+    
+    // input 설정
+    .alert-input.sc-ion-alert-md{
+      border: solid 0.1rem var(--bory-border);
+      padding-left: 1.0rem;
+      padding-right: 1.0rem;
+      font-size: 1.2rem;
+      text-align: center;
+      }
+      .alert-input.sc-ion-alert-md::placeholder{
+      color: #bbbbbb;
+      }
+    
+    
+    // 버튼 배경, 글씨 중앙
+    .alert-button-group.sc-ion-alert-md {
+        background: var(--bory-blue);
+        justify-content: space-around;
+    }
+    // 버튼 글씨
+    .alert-button.sc-ion-alert-md{
+      color: white;
+    }
+  }
+  
+   // 로딩 커스텀
+.loading-wrapper.sc-ion-loading-md {
+  background: inherit;
+  background-image: url('assets/imgs/loading.gif');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: center;
+  width: 15vh;
+  height: 15vh;
+  box-shadow: none;
+}
+
+ion-toolbar {
+
+    color : val(--bory-blue) ;
+
+    ion-buttons {
+        color: white ;
+    }
+
+    ion-title {
+        color: white;
+    }
+}
+
+
+
+
+
+
+
+
+
+  // ion-datetime 설정
+// 팝업 위치 설정
+  // .picker-wrapper.sc-ion-picker-md{
+  //   position: relative;
+  //   margin-top: 50%;
+  // }
+// // 배경색 설정
+//   .sc-ion-picker-md-h {
+//     --background: inherit;
+//   }
+//   // 날짜 글씨 설정
+//   .picker-opt{
+//     color : var(--bory-lightgrey);
+//   }
+// // 선택날짜 글씨 설정
+//   .picker-opt.picker-opt-selected, .picker-prefix, .picker-suffix{
+//     color: white;
+//   }
+
+
+//   ion-backdrop {
+//     opacity: 0.8 !important;
+//   }
+

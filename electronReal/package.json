@@ -1,0 +1,84 @@
+{
+  "name": "ionicdemo",
+  "version": "1.0.0",
+  "description": "An Amazing Capacitor App",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "prepare": "electron-build-env npm rebuild",
+    "build": "modclean && electron-builder build"
+  },
+  "dependencies": {
+    "@capacitor/electron": "^1.5.1",
+    "electron-is-dev": "^1.1.0"
+  },
+  "devDependencies": {
+    "electron-build-env": "^0.2.0",
+    "electron-builder": "^22.4.1",
+    "electron-is-dev": "^1.1.0",
+    "modclean": "^2.1.2",
+    "electron": "^7.1.14"
+  },
+  "keywords": [
+    "capacitor",
+    "electron"
+  ],
+  "author": "YoungPlusSoft INC.",
+  "license": "Copyright © 2020 YoungPlusSoft Inc.",
+  "build": {
+    "appId": "com.youngplussoft.ionicdemo",
+    "productName": "YoungPlusSoft Ionic demo",
+    "artifactName": "ionicdemo-1.0.0-setup.exe",
+    "files": [
+      "node_modules/*",
+      "package.json",
+      "app/*",
+      "app/assets/*",
+      "app/assets/*/*",
+      "assets/*",
+      "LICENSE.md",
+      "index.js",
+      "assets/*",
+      "index.html",
+      "README.md",
+      "README.txt",
+      "renderer.js",
+      "!**/node_modules/*/{CHANGELOG.md,README.md,README,readme.md,readme}",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin",
+      "!**/*.{iml,o,hprof,orig,pyc,pyo,rbc,swp,csproj,sln,xproj}",
+      "!.editorconfig",
+      "!**/._*",
+      "!**/{.DS_Store,.git,.hg,.svn,CVS,RCS,SCCS,.gitignore,.gitattributes}",
+      "!**/{__pycache__,thumbs.db,.flowconfig,.idea,.vs,.nyc_output}",
+      "!**/{appveyor.yml,.travis.yml,circle.yml}",
+      "!**/{npm-debug.log,yarn.lock,.yarn-integrity,.yarn-metadata.json}"
+    ],
+    "mac": {
+      "target": "dmg",
+      "category": "public.app-category.smart-order",
+      "icon": "assets/favicon.ico"
+    },
+    "dmg": {
+      "icon": "assets/favicon.ico",
+      "background": "assets/png/ic_splash_logo.png"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "ia32",
+            "x64"
+          ]
+        }
+      ],
+      "verifyUpdateCodeSignature": false,
+      "icon": "assets/icon.ico"
+    },
+    "directories": {
+      "output": "out"
+    }
+  }
+}

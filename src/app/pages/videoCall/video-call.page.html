@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="--bory-blue">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      contactless-service::{{auth.title}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div class="container">
+  <ion-grid>
+    <ion-row style="height: 80px; padding: 20px 0" [hidden]="onCall">
+      <ion-label>opponent id(email)</ion-label>
+      <ion-input placeholder="상대방 id를 입력해 주세요" [(ngModel)]="opponentId"></ion-input>
+    </ion-row>
+    <ion-row class="call-button">
+      <div *ngIf="!onCall; else hangupButton">
+        <ion-button class="call" fill="clear" (click)="onClickCall()">
+          <ion-icon slot="icon-only" src="assets/icon/call.svg"></ion-icon>
+        </ion-button>
+      </div>
+      <ng-template #hangupButton>
+        <ion-col size="4">
+        </ion-col>
+        <ion-col size="4">
+          <ion-button class="call-end" fill="clear" (click)="onClickHangUp()">
+            <ion-icon slot="icon-only" src="assets/icon/call-end.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="4">
+          <ion-button class="record-start" fill="clear" (click)="onClickRecordStart()" [hidden]="onRecording">
+            <ion-icon slot="icon-only" src="assets/icon/rec-start.svg"></ion-icon>
+          </ion-button>
+
+          <ion-button class="record-end" fill="clear" (click)="onClickRecordEnd()" [hidden]="!onRecording">
+            <ion-icon slot="icon-only" src="assets/icon/rec-end.svg"></ion-icon>
+          </ion-button>
+        </ion-col>
+
+      </ng-template>
+    </ion-row>
+
+    <ion-row class="remote-stream" id="remote-stream">
+      <video id="remote-video" autoplay playsinline></video>
+    </ion-row>
+
+    <ion-row class="local-stream" id="local-stream">
+      <video id="local-video" autoplay playsinline>  
+      </video>
+    </ion-row>
+  </ion-grid>
+  </div>
+</ion-content>

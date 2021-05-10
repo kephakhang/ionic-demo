@@ -1,0 +1,45 @@
+<ion-content>
+<div id="dictationEdit">
+
+  <div class="close">
+    <ion-button (click)="onClose()">
+      <b>X</b>
+    </ion-button>
+  </div>
+  <!-- 문장 음성 파형 -->
+
+  <div class="video-player">
+    <a href="{{params.url}}" target="_blank"><img src="{{auth.root}}assets/png/pwa.png" /></a>
+    <iframe  width="100%" height="100%" [src]="params.url" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <!-- 문장분석 컨텐츠 표 -->
+  <div class="reaction">
+    <ion-grid>
+      <ion-row>
+        <ion-col><ion-label>{{hotCount}}</ion-label><ion-button class="hot" (click)='onHot()'>Hot</ion-button></ion-col>
+        <ion-col><ion-label>{{coolCount}}</ion-label><ion-button class="cool" (click)='onCool()'>Cool</ion-button></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</div>
+</ion-content>
+
+
+<style>
+
+
+  ion-row.play ion-col ion-button.play {
+    width: 100%; 
+  }  
+
+  ion-row.button   ion-col ion-button.cancel {
+    width: 100%;
+  }
+   
+  ion-row.button ion-col ion-button.update {
+    width: 100%;
+  }
+                             
+</style>
